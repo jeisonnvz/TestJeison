@@ -4,8 +4,10 @@ test con laravel lumen y react
 
 Pasos para la ejecucion:
 1-al realizar la descarga abrir la consola y ubicarse en la carpeta descargada.
-luego realizar el siguiente comando
+luego realizar el siguiente comando:
+
 composer install.
+
 para que instale los componentes faltantes.
 
 2-tomar el scrip de la base de datos llamada Lume DBTestjeison.
