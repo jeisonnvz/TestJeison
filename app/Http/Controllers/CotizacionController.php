@@ -24,19 +24,19 @@ public function validateCurrency(Request $request, $moneda){
   	
   	}else{
 
-  		if( $moneda == "Dolar"){
+  		if( $moneda == "dolar"){
 
 			$array = $this->consumeService(new DolarServiceExt);
-			// estoy asustado Sr Stark. no quiere funcionar
+			
 			return response()->json([$array[0]], $array[1]);//status ok
-			// funciono 1:17am 01/02/2019 Argentina
+			
 
-		}elseif ($moneda == "Peso"){
+		}elseif ($moneda == "peso"){
 			$array = $this->consumeService(new PesoServiceExt);
 			//Servicio no implementado
 			return response()->json([$array[0]], $array[1]); 
 
-		}elseif ($moneda == "Real"){
+		}elseif ($moneda == "real"){
 			//Servicio no implementado
 			$array = $this->consumeService(new RealServiceExt);
 			//return response()->json($array); 
