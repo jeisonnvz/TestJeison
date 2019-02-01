@@ -12,8 +12,8 @@ class CotizacionController extends Controller
 	//private $consumeServiceMethod;
 
 public function consumeService(ServiceExtInterface $consumeServiceMethod){
-
-	$consumeServiceMethod->consumeService();
+	//faltaba un return para que lo mostrara sigue la secuencia
+	return $consumeServiceMethod->consumeService();
 } 
 
 public function validateCurrency(Request $request, $moneda){
@@ -26,19 +26,21 @@ public function validateCurrency(Request $request, $moneda){
 
   		if( $moneda == "Dolar"){
 
-			return response()->json(['Dolar'=>'cotizacionToday'], 200);//status ok
+			$array = $this->consumeService(new DolarServiceExt);
+			// estoy asustado Sr Stark. no quiere funcionar
+			return response()->json([$array[0]], $array[1]);//status ok
+			// funciono 1:17am 01/02/2019 Argentina
 
 		}elseif ($moneda == "Peso"){
-
+			$array = $this->consumeService(new PesoServiceExt);
 			//Servicio no implementado
-			return response()->json(['Peso'=>'Error: Aun no hemos implementado un servicio'], 501); 
+			return response()->json([$array[0]], $array[1]); 
 
 		}elseif ($moneda == "Real"){
 			//Servicio no implementado
 			$array = $this->consumeService(new RealServiceExt);
-			echo "<scipt>console.log(".$array.")</script>";
-			return response()->json($array);
-			//return response()->json(['Real'=>'Error: Aun no hemos implementado un servicio'], 501);
+			//return response()->json($array); 
+			return response()->json(['Real'=>'Error: Aun no hemos implementado un servicio'], 501);
 
 		} else {
 
@@ -49,4 +51,4 @@ public function validateCurrency(Request $request, $moneda){
 
  }    
 }
-	
+

@@ -20,5 +20,4 @@ class PesoServiceExt implements ServiceExtInterface
 		$array[1]= 501;
 		return $array;
 	}    
-
 }

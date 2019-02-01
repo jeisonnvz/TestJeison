@@ -24,9 +24,7 @@ $router->group(['middelware'=> [], 'prefix'=>'api/v1'] ,function() use ($router)
     $router->post('/users', 'UsersController@createUser');
     $router->put('/users/{id}', 'UsersController@updateUser');
     $router->delete('/users/{id}', 'UsersController@deleteUser');
-
-
-
 });
 
 	$router->get('/{moneda}/quote', 'CotizacionController@validateCurrency');
+ por el back creo que estamos bien, eso de los mocos no seeee!! 

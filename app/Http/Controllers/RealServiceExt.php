@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use App\Http\Controllers\ServiceExtInterface;
 
-class RealServiceExt implements ServiceExtInterface
+class RealServiceExt extends Controller implements ServiceExtInterface
 {
 	// Url de servicio externo a consumir para monitorear la cotizacion de la moneda
 	private $urlServiceExt;
@@ -19,7 +19,7 @@ class RealServiceExt implements ServiceExtInterface
 		$array[0]="Error: Not Implemented";  
 		$array[1]= 501;
 		//print_r($array);
-		return $array;
+		return response()->json([$array[0]],$array[1]);
 	}    
 
 }
