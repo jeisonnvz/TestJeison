@@ -126,4 +126,27 @@ class UsersController extends Controller
                 return response()->json(['Error'=> 'No autorizado'], 406);
             }
     }
+
+    public function getLogin(Request $request){
+        if($request->isJson()){
+            try{
+                $data = $request->json()->all();
+                $user=User::where('username', $data['username'])->first();
+
+                if($user && Hash::check($data['password'], $user->password)){
+                    return response()->json($user, 200);
+                }else{
+                    return response()->json(['Error'=> 'No Content'], 406);
+
+                }
+
+
+            }catch(ModelNotFoundException $e){
+        
+            }  return response()->json(['Error'=> 'No Content'], 406);
+
+        }else{
+            return response()->json(['Error'=> 'No autorizado'], 406);
+        }
+    }
 }
