@@ -1,10 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Http\Controllers\ServiceExtInterface
-use App\Http\Controllers\DolarServiceExt
-use App\Http\Controllers\PesoServiceExt
-use App\Http\Controllers\RealServiceExt
+use App\Http\Controllers\ServiceExtInterface;
+use App\Http\Controllers\DolarServiceExt;
+use App\Http\Controllers\PesoServiceExt;
+use App\Http\Controllers\RealServiceExt;
 
 class DolarServiceExt implements ServiceExtInterface
 {

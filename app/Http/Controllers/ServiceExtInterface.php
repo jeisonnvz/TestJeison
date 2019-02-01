@@ -8,6 +8,5 @@ interface ServiceExtInterface
 
 	 public function consumeService();
 
-
 }
 	

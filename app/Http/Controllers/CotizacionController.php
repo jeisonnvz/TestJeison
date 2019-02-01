@@ -7,8 +7,9 @@ use App\Http\Controllers\DolarServiceExt;
 use App\Http\Controllers\PesoServiceExt;
 use App\Http\Controllers\RealServiceExt;
 
-class CotizacionController extends Controller implements ServiceExtInterface
+class CotizacionController extends Controller 
 {
+	//private $consumeServiceMethod;
 
 public function consumeService(ServiceExtInterface $consumeServiceMethod){
 
@@ -34,9 +35,10 @@ public function validateCurrency(Request $request, $moneda){
 
 		}elseif ($moneda == "Real"){
 			//Servicio no implementado
-			//$array = $this->consumeService(new RealServiceExt);
-			//return reponse()->json([$array[0]],$array[1]);
-			return response()->json(['Real'=>'Error: Aun no hemos implementado un servicio'], 501);
+			$array = $this->consumeService(new RealServiceExt);
+			echo "<scipt>console.log(".$array.")</script>";
+			return response()->json($array);
+			//return response()->json(['Real'=>'Error: Aun no hemos implementado un servicio'], 501);
 
 		} else {
 

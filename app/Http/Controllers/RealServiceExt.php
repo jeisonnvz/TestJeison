@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Http\Controllers\ServiceExtInterface
+use App\Http\Controllers\ServiceExtInterface;
 
 class RealServiceExt implements ServiceExtInterface
 {
@@ -18,6 +18,7 @@ class RealServiceExt implements ServiceExtInterface
 
 		$array[0]="Error: Not Implemented";  
 		$array[1]= 501;
+		//print_r($array);
 		return $array;
 	}    
 

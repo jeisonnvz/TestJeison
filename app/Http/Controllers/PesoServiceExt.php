@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Http\Controllers\ServiceExtInterface
+use App\Http\Controllers\ServiceExtInterface;
 
 class PesoServiceExt implements ServiceExtInterface
 {
